@@ -1074,7 +1074,7 @@ async def metoo(hahayes):
     await hahayes.edit(choice(METOOSTR))
 
 
-@register(outgoing=True, pattern="^.Oof$")
+@register(outgoing=True, pattern="^Oof$")
 async def Oof(e):
     t = "Oof"
     for j in range(16):

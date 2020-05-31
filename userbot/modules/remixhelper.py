@@ -30,8 +30,8 @@ async def usit(e):
 @register(outgoing=True, pattern="^.remixvar$")
 async def var(m):
     await m.edit(
-        f"Here's a list of VARS for {DEFAULTUSER} on **oub-remix**:\n"
-        "\n[HEROKU VARS](https://raw.githubusercontent.com/sahyam2019/oub-remix/sql-extended/varshelper.txt)")
+        f"Here's a list of VARS for {DEFAULTUSER} on **UserBot**:\n"
+        "\n[HEROKU VARS](https://raw.githubusercontent.com/marshmello61/UserBot/sql-extended/varshelper.txt)")
     
     
 CMD_HELP.update({

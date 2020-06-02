@@ -26,7 +26,7 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 UNAPPROVED_MSG = (
-    "`HeY! Please don't spam. Wait for my master's approval 🙃\nDon't worry. It's an automated message.\n\nWait for me to look into it.\n\nNOTE: If you send more than two messages, you will get report as spam + block. \n\n`")
+    "`HeY! Please don't spam. Wait for my master's approval 🙃\nDon't worry. It's an automated message.\n\nWait for my master to look into it.\n\nNOTE: If you send more than two messages, you will get report as spam + block. \n\n`")
 # =================================================================
 
 NO_PM_LOG_USERS = []
@@ -251,7 +251,7 @@ async def blockpm(block):
     else:
         await block.client(BlockRequest(block.chat_id))
         aname = await block.client.get_entity(block.chat_id)
-        await block.edit("`You've been blocked 😡!`")
+        await block.edit("`My master thinks that you're useless person to discuss with.`\n\n`Hence, you've been blocked :) !`")
         name0 = str(aname.first_name)
         uid = block.chat_id
 

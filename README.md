@@ -20,6 +20,9 @@
     support group mentioned below.
 /**
 ```
+## Guide
+
+[Click here](https://del.dog/nifimecyck)
 
 ## How To Host?
 
@@ -49,7 +52,7 @@ Thanks for all :
 * [༺αиυвιѕ༻](https://github.com/Dark-Princ3) - X-tra-Telegram
 * [MoveAngel](https://github.com/MoveAngel) - One4uBot
 
-and many more people who aren't mentioned here, but may be found in [Contributors](https://github.com/sahyam2019/oub-remix/graphs/contributors).
+and many more people who aren't mentioned here, but may be found in [Contributors](https://github.com/marshmello61/UserBot/graphs/contributors).
 
 ## License
 

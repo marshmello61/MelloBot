@@ -9,7 +9,7 @@ from importlib import import_module
 from sys import argv
 
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-from userbot import LOGS, bot
+from userbot import LOGS, bot, BOT_VER
 from userbot.modules import ALL_MODULES
 
 
@@ -26,7 +26,7 @@ except PhoneNumberInvalidError:
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
-LOGS.info("You are running UserBot [v3.0]")
+LOGS.info("You are running UserBot [{BOT_VER}]")
 
 LOGS.info(
     "Congratulations, your userbot is now running !! Test it by typing .start/.ping in any chat."

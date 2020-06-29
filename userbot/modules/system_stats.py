@@ -131,7 +131,7 @@ async def pipcheck(pip):
 async def amireallyalive(alive):
     """ For .start command, check if the bot is running.  """
     logo = ALIVE_LOGO
-    output = (f"`🤖 STATUS: Remix is running ✅`\n"
+    output = (f"`STATUS: UserBot is running sax ✅`\n"
              f"`Telethon version`: {version.__version__} \n"
              f"`Python version🐍`: {python_version()} \n"
              f"`Bot Version🤘: UserBot {BOT_VER}` \n"
@@ -178,5 +178,5 @@ CMD_HELP.update({
 \n\n`.resetalive`\
 \nUsage: Resets the user to default.\
 \n\n`.db`\
-\nUsage:Shows database related info."    
-})  
+\nUsage:Shows database related info."
+})

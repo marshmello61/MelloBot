@@ -12,7 +12,7 @@ from shutil import which
 from os import remove
 from telethon import version
 
-from userbot import CMD_HELP, ALIVE_NAME, BOT_VER
+from userbot import CMD_HELP, ALIVE_NAME, BOT_VER, UPSTREAM_REPO_BRANCH, ALIVE_LOGO, bot
 from userbot.events import register
 
 # ================= CONSTANT =================
@@ -129,21 +129,18 @@ async def pipcheck(pip):
 
 @register(outgoing=True, pattern="^.start$")
 async def amireallyalive(alive):
-    """ For .alive command, check if the bot is running.  """
-    await alive.edit(
-                     
-                      
-                     f"`🤖 STATUS: Working Sexy AF ✅` \n"
-                     f"Telethon version:{version.__version__} \n"
-                     f"Python version🐍:{python_version()} \n"
-                     f"`Bot Version🤘: UserBot {BOT_VER}` \n"
-                     f"------------------------------------ \n"
-                     
-                     f"User 👨‍🚀: {DEFAULTUSER} \n"
-                     f"Maintainer 🏄‍♂️: @marshmello_61"
-                     )
-                         
-
+    """ For .start command, check if the bot is running.  """
+    logo = ALIVE_LOGO
+    output = (f"`🤖 STATUS: Remix is running ✅`\n"
+             f"`Telethon version`: {version.__version__} \n"
+             f"`Python version🐍`: {python_version()} \n"
+             f"`Bot Version🤘: UserBot {BOT_VER}` \n"
+             f"==================================== \n"
+             f"User 👨‍🚀: {DEFAULTUSER} \n"
+             f"Maintainer 🏄‍♂️: @marshmello_61\n"
+             f"====================================\n")
+    await bot.send_file(alive.chat_id, logo, caption=output)
+    await alive.delete()
 
 
 @register(outgoing=True, pattern="^.aliveu")

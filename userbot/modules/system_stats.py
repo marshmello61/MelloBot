@@ -192,13 +192,14 @@ async def pipcheck(pip):
 async def amireallyalive(alive):
     """ For .start command, check if the bot is running.  """
     logo = ALIVE_LOGO
-    output = (f"`STATUS: UserBot is running sax ✅`\n"
+    output = (f"      // Mayur's UserBot //  \n"
+             f"`Status`: UserBot is working fine af\n"
              f"`Telethon version`: {version.__version__} \n"
-             f"`Python version🐍`: {python_version()} \n"
-             f"`Bot Version🤘: UserBot {BOT_VER}` \n"
+             f"`Python version`: {python_version()} \n"
+             f"`Bot Version`: Project UserBot {BOT_VER} \n"
              f"==================================== \n"
-             f"User 👨‍🚀: {DEFAULTUSER} \n"
-             f"Maintainer 🏄‍♂️: @marshmello_61\n"
+             f"`User`: {DEFAULTUSER} \n"
+             f"`Maintainer`️: @marshmello_61\n"
              f"====================================\n")
     await bot.send_file(alive.chat_id, logo, caption=output)
     await alive.delete()
@@ -206,7 +207,7 @@ async def amireallyalive(alive):
 
 @register(outgoing=True, pattern="^.aliveu")
 async def amireallyaliveuser(username):
-    """ For .aliveu command, change the username in the .alive command. """
+    """ For .aliveu command, change the username in the .start command. """
     message = username.text
     output = '.aliveu [new user without brackets] nor can it be empty'
     if not (message == '.aliveu' or message[7:8] != ' '):

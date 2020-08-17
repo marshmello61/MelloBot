@@ -27,6 +27,10 @@ from userbot.events import register
 # ========================= CONSTANTS ============================
 UNAPPROVED_MSG = (
     "Hey there!\nYou're not (yet) allowed to text me. Wait for me to look into it. Please be patient, Thank you\n\n*This is an automated text*")
+UNAPPROVED_MSG1 = (
+    "Buddy, Wait for me to look into it\n\nYou will be BLOCKED and reported as SPAM\nafter  `1`  more text")
+UNAPPROVED_MSG2 = (
+    "This is your last warning")
 # =================================================================
 
 NO_PM_LOG_USERS = []
@@ -54,16 +58,6 @@ async def permitpm(event):
             if not apprv and event.text != UNAPPROVED_MSG:
                 if event.chat_id in LASTMSG:
                     prevmsg = LASTMSG[event.chat_id]
-                    # If the message doesn't same as previous one
-                    # Send the Unapproved Message again
-                    if event.text != prevmsg:
-                        async for message in event.client.iter_messages(
-                                event.chat_id,
-                                from_user='me',
-                                search=UNAPPROVED_MSG):
-                            await message.delete()
-                        await event.reply(UNAPPROVED_MSG)
-                    LASTMSG.update({event.chat_id: event.text})
                 else:
                     await event.reply(UNAPPROVED_MSG)
                     LASTMSG.update({event.chat_id: event.text})
@@ -76,13 +70,10 @@ async def permitpm(event):
                     COUNT_PM[event.chat_id] = COUNT_PM[event.chat_id] + 1
 
                 if COUNT_PM[event.chat_id] == 2:
-                    await event.reply(
-                       "Buddy, Wait for me to look into it\n\n"
-                       "You will be BLOCKED and reported as SPAM\n"
-                       "after  `1`  more text")
+                    await event.reply(UNAPPROVED_MSG1)
 
                 if COUNT_PM[event.chat_id] == 3:
-                    await event.reply("This is your last warning")
+                    await event.reply(UNAPPROVED_MSG2)
 
                 if COUNT_PM[event.chat_id] > 3:
                     await event.respond(
@@ -207,6 +198,16 @@ async def approvepm(apprvpm):
     async for message in apprvpm.client.iter_messages(apprvpm.chat_id,
                                                       from_user='me',
                                                       search=UNAPPROVED_MSG):
+        await message.delete()
+
+    async for message in apprvpm.client.iter_messages(apprvpm.chat_id,
+                                                      from_user='me',
+                                                      search=UNAPPROVED_MSG1):
+        await message.delete()
+
+    async for message in apprvpm.client.iter_messages(apprvpm.chat_id,
+                                                      from_user='me',
+                                                      search=UNAPPROVED_MSG2):
         await message.delete()
 
     if BOTLOG:

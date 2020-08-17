@@ -168,8 +168,8 @@ async def kang(event):
         f"{emoji} as the emoji! "
         f"This pack can be found `[here](t.me/addstickers/{packname})",
         parse_mode='md')
-    await asyncio.sleep(7.5)
-    await event.delete()    
+    await asyncio.sleep(11)
+    await event.delete()
 
 
 async def newpack(is_anim, sticker, emoji, packtitle, packname):

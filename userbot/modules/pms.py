@@ -26,7 +26,11 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 UNAPPROVED_MSG = (
-    "`Hey there! This is Mayur's UserBot.\n\nWait for my master to look into it. Until then don't spam chat.\n\nNOTE: If you send more than two messages, you will get report as spam + block. \n\n`")
+    "Hey there!\nYou're not (yet) allowed to text me. Wait for me to look into it. Please be patient, Thank you\n\n*This is an automated text*")
+UNAPPROVED_MSG1 = (
+    "Buddy, Wait for me to look into it\n\nYou will be BLOCKED and reported as SPAM\nafter  `1`  more text")
+UNAPPROVED_MSG2 = (
+    "This is your last warning")
 # =================================================================
 
 NO_PM_LOG_USERS = []
@@ -54,16 +58,6 @@ async def permitpm(event):
             if not apprv and event.text != UNAPPROVED_MSG:
                 if event.chat_id in LASTMSG:
                     prevmsg = LASTMSG[event.chat_id]
-                    # If the message doesn't same as previous one
-                    # Send the Unapproved Message again
-                    if event.text != prevmsg:
-                        async for message in event.client.iter_messages(
-                                event.chat_id,
-                                from_user='me',
-                                search=UNAPPROVED_MSG):
-                            await message.delete()
-                        await event.reply(UNAPPROVED_MSG)
-                    LASTMSG.update({event.chat_id: event.text})
                 else:
                     await event.reply(UNAPPROVED_MSG)
                     LASTMSG.update({event.chat_id: event.text})
@@ -75,10 +69,16 @@ async def permitpm(event):
                 else:
                     COUNT_PM[event.chat_id] = COUNT_PM[event.chat_id] + 1
 
-                if COUNT_PM[event.chat_id] > 2:
+                if COUNT_PM[event.chat_id] == 2:
+                    await event.reply(UNAPPROVED_MSG1)
+
+                if COUNT_PM[event.chat_id] == 3:
+                    await event.reply(UNAPPROVED_MSG2)
+
+                if COUNT_PM[event.chat_id] > 3:
                     await event.respond(
-                        "`You were spamming my master's pm dude.`\n"
-                        "`You have been BLOCKED and reported as SPAM now. JUST FUCK OFF 🖕.`"
+                        "You were spamming my pm dude.\n"
+                        "You have been BLOCKED and reported as SPAM now. JUST FUCK OFF 🖕."
                     )
 
                     try:
@@ -190,14 +190,24 @@ async def approvepm(apprvpm):
     try:
         approve(uid)
     except IntegrityError:
-        await apprvpm.edit("`User may already be approved.`")
+        await apprvpm.edit("User may already be approved.")
         return
 
-    await apprvpm.edit(f"[{name0}](tg://user?id={uid}) `approved to PM!`")
+    await apprvpm.edit(f"Yayy! [{name0}](tg://user?id={uid}) can text me now!")
 
     async for message in apprvpm.client.iter_messages(apprvpm.chat_id,
                                                       from_user='me',
                                                       search=UNAPPROVED_MSG):
+        await message.delete()
+
+    async for message in apprvpm.client.iter_messages(apprvpm.chat_id,
+                                                      from_user='me',
+                                                      search=UNAPPROVED_MSG1):
+        await message.delete()
+
+    async for message in apprvpm.client.iter_messages(apprvpm.chat_id,
+                                                      from_user='me',
+                                                      search=UNAPPROVED_MSG2):
         await message.delete()
 
     if BOTLOG:
@@ -227,7 +237,7 @@ async def disapprovepm(disapprvpm):
         name0 = str(aname.first_name)
 
     await disapprvpm.edit(
-        f"[{name0}](tg://user?id={disapprvpm.chat_id}) `Disaproved to PM!`")
+        f"Ahh! [{name0}](tg://user?id={disapprvpm.chat_id}) cannot text me!")
 
     if BOTLOG:
         await disapprvpm.client.send_message(
@@ -251,7 +261,7 @@ async def blockpm(block):
     else:
         await block.client(BlockRequest(block.chat_id))
         aname = await block.client.get_entity(block.chat_id)
-        await block.edit("`My master thinks that you're useless person to discuss with.`\n\n`Hence, you've been blocked :) !`")
+        await block.edit("`I think that you're useless person to discuss with.`\n\n`Hence, you've been blocked :) !`")
         name0 = str(aname.first_name)
         uid = block.chat_id
 
@@ -315,7 +325,7 @@ async def approve_p_m(event):
                 await asyncio.sleep(3)
                 await event.delete()
 
-                
+
 @register(pattern="^.log(?: |$)(.*)")
 async def approve_p_m(event):
     if event.fwd_from:

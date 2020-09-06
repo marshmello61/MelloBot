@@ -14,7 +14,6 @@ import shutil
 import json
 import requests
 from os import popen
-from userbot.utils import chrome, options
 import urllib.parse
 import logging
 from bs4 import BeautifulSoup
@@ -27,7 +26,6 @@ import qrcode
 import barcode
 from barcode.writer import ImageWriter
 import emoji
-from googletrans import Translator
 from time import sleep
 from html import unescape
 from re import findall
@@ -40,7 +38,6 @@ from telethon import events
 from wikipedia import summary
 from wikipedia.exceptions import DisambiguationError, PageError
 from urbandict import define
-from requests import get
 from requests import get, post, exceptions
 from search_engine_parser import GoogleSearch
 from googleapiclient.discovery import build
@@ -61,7 +58,7 @@ from asyncio import sleep
 from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, YOUTUBE_API_KEY, CHROME_DRIVER, GOOGLE_CHROME_BIN, bot, REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY, OCR_SPACE_API_KEY, LOGS
 from userbot.events import register
 from telethon.tl.types import DocumentAttributeAudio
-from userbot.utils import progress, humanbytes, time_formatter, chrome, googleimagesdownload
+from userbot.utils import progress, humanbytes, time_formatter, chrome, options, googleimagesdownload
 import subprocess
 from datetime import datetime
 import asyncurban
@@ -1140,113 +1137,6 @@ def useragent():
     user_agent = choice(useragents)
     return user_agent.text
 
-@register(outgoing=True, pattern=r"^.paste(?: |$)([\s\S]*)")
-async def paste(pstl):
-    """ For .paste command, pastes the text directly to dogbin. """
-    dogbin_final_url = ""
-    match = pstl.pattern_match.group(1).strip()
-    reply_id = pstl.reply_to_msg_id
-
-    if not match and not reply_id:
-        await pstl.edit("`Elon Musk said I cannot paste void.`")
-        return
-
-    if match:
-        message = match
-    elif reply_id:
-        message = (await pstl.get_reply_message())
-        if message.media:
-            downloaded_file_name = await pstl.client.download_media(
-                message,
-                TEMP_DOWNLOAD_DIRECTORY,
-            )
-            m_list = None
-            with open(downloaded_file_name, "rb") as fd:
-                m_list = fd.readlines()
-            message = ""
-            for m in m_list:
-                message += m.decode("UTF-8") + "\r"
-            os.remove(downloaded_file_name)
-        else:
-            message = message.message
-
-    # Dogbin
-    await pstl.edit("`Pasting text . . .`")
-    resp = post(DOGBIN_URL + "documents", data=message.encode('utf-8'))
-
-    if resp.status_code == 200:
-        response = resp.json()
-        key = response['key']
-        dogbin_final_url = DOGBIN_URL + key
-
-        if response['isUrl']:
-            reply_text = ("`Pasted successfully!`\n\n"
-                          f"`Shortened URL:` {dogbin_final_url}\n\n"
-                          "`Original(non-shortened) URLs`\n"
-                          f"`Dogbin URL`: {DOGBIN_URL}v/{key}\n")
-        else:
-            reply_text = ("`Pasted successfully!`\n\n"
-                          f"`Dogbin URL`: {dogbin_final_url}")
-    else:
-        reply_text = ("`Failed to reach Dogbin`")
-
-    await pstl.edit(reply_text)
-    if BOTLOG:
-        await pstl.client.send_message(
-            BOTLOG_CHATID,
-            f"Paste query was executed successfully",
-        )
-
-
-@register(outgoing=True, pattern="^.getpaste(?: |$)(.*)")
-async def get_dogbin_content(dog_url):
-    """ For .getpaste command, fetches the content of a dogbin URL. """
-    textx = await dog_url.get_reply_message()
-    message = dog_url.pattern_match.group(1)
-    await dog_url.edit("`Getting dogbin content...`")
-
-    if textx:
-        message = str(textx.message)
-
-    format_normal = f'{DOGBIN_URL}'
-    format_view = f'{DOGBIN_URL}v/'
-
-    if message.startswith(format_view):
-        message = message[len(format_view):]
-    elif message.startswith(format_normal):
-        message = message[len(format_normal):]
-    elif message.startswith("del.dog/"):
-        message = message[len("del.dog/"):]
-    else:
-        await dog_url.edit("`Is that even a dogbin url?`")
-        return
-
-    resp = get(f'{DOGBIN_URL}raw/{message}')
-
-    try:
-        resp.raise_for_status()
-    except exceptions.HTTPError as HTTPErr:
-        await dog_url.edit(
-            "Request returned an unsuccessful status code.\n\n" + str(HTTPErr))
-        return
-    except exceptions.Timeout as TimeoutErr:
-        await dog_url.edit("Request timed out." + str(TimeoutErr))
-        return
-    except exceptions.TooManyRedirects as RedirectsErr:
-        await dog_url.edit(
-            "Request exceeded the configured number of maximum redirections." +
-            str(RedirectsErr))
-        return
-
-    reply_text = "`Fetched dogbin URL content successfully!`\n\n`Content:` " + resp.text
-
-    await dog_url.edit(reply_text)
-    if BOTLOG:
-        await dog_url.client.send_message(
-            BOTLOG_CHATID,
-            "Get dogbin content query was executed successfully",
-        )
-
 @register(pattern="^.ss (.*)", outgoing=True)
 async def capture(url):
     """ For .ss command, capture a website's screenshot and send the photo. """
@@ -1295,7 +1185,90 @@ async def capture(url):
                                    caption=input_str,
                                    force_document=True,
                                    reply_to=message_id)
-        await url.delete()        
+        await url.delete()
+
+@register(outgoing=True, pattern="^.imdb (.*)")
+async def imdb(e):
+    try:
+        movie_name = e.pattern_match.group(1)
+        remove_space = movie_name.split(' ')
+        final_name = '+'.join(remove_space)
+        page = get("https://www.imdb.com/find?ref_=nv_sr_fn&q=" + final_name +
+                   "&s=all")
+        lnk = str(page.status_code)
+        soup = BeautifulSoup(page.content, 'lxml')
+        odds = soup.findAll("tr", "odd")
+        mov_title = odds[0].findNext('td').findNext('td').text
+        mov_link = "http://www.imdb.com/" + \
+            odds[0].findNext('td').findNext('td').a['href']
+        page1 = get(mov_link)
+        soup = BeautifulSoup(page1.content, 'lxml')
+        if soup.find('div', 'poster'):
+            poster = soup.find('div', 'poster').img['src']
+        else:
+            poster = ''
+        if soup.find('div', 'title_wrapper'):
+            pg = soup.find('div', 'title_wrapper').findNext('div').text
+            mov_details = re.sub(r'\s+', ' ', pg)
+        else:
+            mov_details = ''
+        credits = soup.findAll('div', 'credit_summary_item')
+        if len(credits) == 1:
+            director = credits[0].a.text
+            writer = 'Not available'
+            stars = 'Not available'
+        elif len(credits) > 2:
+            director = credits[0].a.text
+            writer = credits[1].a.text
+            actors = []
+            for x in credits[2].findAll('a'):
+                actors.append(x.text)
+            actors.pop()
+            stars = actors[0] + ',' + actors[1] + ',' + actors[2]
+        else:
+            director = credits[0].a.text
+            writer = 'Not available'
+            actors = []
+            for x in credits[1].findAll('a'):
+                actors.append(x.text)
+            actors.pop()
+            stars = actors[0] + ',' + actors[1] + ',' + actors[2]
+        if soup.find('div', "inline canwrap"):
+            story_line = soup.find('div',
+                                   "inline canwrap").findAll('p')[0].text
+        else:
+            story_line = 'Not available'
+        info = soup.findAll('div', "txt-block")
+        if info:
+            mov_country = []
+            mov_language = []
+            for node in info:
+                a = node.findAll('a')
+                for i in a:
+                    if "country_of_origin" in i['href']:
+                        mov_country.append(i.text)
+                    elif "primary_language" in i['href']:
+                        mov_language.append(i.text)
+        if soup.findAll('div', "ratingValue"):
+            for r in soup.findAll('div', "ratingValue"):
+                mov_rating = r.strong['title']
+        else:
+            mov_rating = 'Not available'
+        await e.edit('<a href=' + poster + '>&#8203;</a>'
+                     '<b>Title : </b><code>' + mov_title + '</code>\n<code>' +
+                     mov_details + '</code>\n<b>Rating : </b><code>' +
+                     mov_rating + '</code>\n<b>Country : </b><code>' +
+                     mov_country[0] + '</code>\n<b>Language : </b><code>' +
+                     mov_language[0] + '</code>\n<b>Director : </b><code>' +
+                     director + '</code>\n<b>Writer : </b><code>' + writer +
+                     '</code>\n<b>Stars : </b><code>' + stars +
+                     '</code>\n<b>IMDB Url : </b>' + mov_link +
+                     '\n<b>Story Line : </b>' + story_line,
+                     link_preview=True,
+                     parse_mode='HTML')
+    except IndexError:
+        await e.edit("Plox enter **Valid movie name** kthx")
+
 
 CMD_HELP.update({
     "scrappers":
@@ -1328,9 +1301,6 @@ CMD_HELP.update({
 \nUsage: Make a QR Code from the given content.\nExample: .makeqr www.google.com\nNote: use .decode <reply to barcode/qrcode> to get decoded content.\
 \n\n`.barcode` <content>\
 \nUsage: Make a BarCode from the given content\nExample: `.barcode www.google.com`.\
-\n\n`.paste` <text/reply>\
-\nUsage: Create a paste or a shortened url using dogbin\
-\nUse `.getpaste` to get the content of a paste or shortened url from dogbin\
 \n\n`.bitly` <url> or reply to message contains url\
 \nUsage: Shorten link using bit.ly API\
 \n\n`.direct` <url>\
@@ -1338,5 +1308,7 @@ CMD_HELP.update({
 \n\nSupported Urls: `Google Drive` - `Cloud Mail` - `Yandex.Disk` - `AFH` - `ZippyShare` - `MediaFire` - `SourceForge` - `OSDN` - `GitHub`\
 \n\n`.ss <url>`\
 \nUsage: Takes a screenshot of a website and sends the screenshot.\
-\nExample of a valid URL : `https://www.google.com`"    
+\nExample of a valid URL : `https://www.google.com`\
+\n\n`.imdb` movie/series name\
+\nUsage:scrap movie/series information."
 })

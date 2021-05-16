@@ -39,7 +39,7 @@ from wikipedia import summary
 from wikipedia.exceptions import DisambiguationError, PageError
 from urbandict import define
 from requests import get, post, exceptions
-from search_engine_parser import GoogleSearch
+from search_engine_parser import YahooSearch  # GoogleSearch
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from googletrans import LANGUAGES, Translator
@@ -99,7 +99,7 @@ async def ocr_space_file(filename,
         )
     return r.json()
 
-DOGBIN_URL = "https://del.dog/"    
+DOGBIN_URL = "https://del.dog/"
 
 @register(outgoing=True, pattern="^.crblang (.*)")
 async def setlang(prog):
@@ -171,12 +171,12 @@ async def carbon_api(e):
     driver.quit()
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
-    
-    
-@register(outgoing=True, pattern="^.img (.*)")
+
+
+@register(outgoing=True, pattern=r"^\.img (.*)")
 async def img_sampler(event):
     """ For .img command, search and return images matching the query. """
-    await event.edit("Processing...")
+    await event.edit("`Processing...`")
     query = event.pattern_match.group(1)
     lim = findall(r"lim=\d+", query)
     try:
@@ -184,7 +184,7 @@ async def img_sampler(event):
         lim = lim.replace("lim=", "")
         query = query.replace("lim=" + lim[0], "")
     except IndexError:
-        lim = 5
+        lim = 7
     response = googleimagesdownload()
 
     # creating list of arguments
@@ -192,16 +192,18 @@ async def img_sampler(event):
         "keywords": query,
         "limit": lim,
         "format": "jpg",
-        "no_directory": "no_directory"
+        "no_directory": "no_directory",
     }
 
     # passing the arguments to the function
     paths = response.download(arguments)
     lst = paths[0][query]
     await event.client.send_file(
-        await event.client.get_input_entity(event.chat_id), lst)
+        await event.client.get_input_entity(event.chat_id), lst
+    )
     shutil.rmtree(os.path.dirname(os.path.abspath(lst[0])))
     await event.delete()
+
 
 
 @register(outgoing=True, pattern="^.currency (.*)")
@@ -244,7 +246,7 @@ async def gsearch(q_event):
     except IndexError:
         page = 1
     search_args = (str(match), int(page))
-    gsearch = GoogleSearch()
+    gsearch = YahooSearch()
     gresults = await gsearch.async_search(*search_args)
     msg = ""
     for i in range(7):
@@ -400,13 +402,14 @@ async def _(event):
     try:
         translated = translator.translate(text, dest=lan)
         after_tr_text = translated.text
+        mono_tr_text = (("`{}`").format(after_tr_text))
         # TODO: emojify the :
         # either here, or before translation
         output_str = """**TRANSLATED** from {} to {}
 {}""".format(
             translated.src,
             lan,
-            after_tr_text
+            mono_tr_text
         )
         await event.edit(output_str)
     except Exception as exc:
@@ -1151,7 +1154,13 @@ async def capture(url):
     if link_match:
         link = link_match.group()
     else:
-        return await url.edit("`I need a valid link to take screenshots from.`")
+        prefix_str = 'http://'
+        complete_link = (("{}{}").format(prefix_str, input_str))
+        link_match = match(r'\bhttps?://.*\.\S+', complete_link)
+        if link_match:
+            link = link_match.group()
+        else:
+            return await url.edit("`I need a valid link to take screenshots from.`")
     driver.get(link)
     height = driver.execute_script(
         "return Math.max(document.body.scrollHeight, document.body.offsetHeight, "
@@ -1308,7 +1317,7 @@ CMD_HELP.update({
 \n\nSupported Urls: `Google Drive` - `Cloud Mail` - `Yandex.Disk` - `AFH` - `ZippyShare` - `MediaFire` - `SourceForge` - `OSDN` - `GitHub`\
 \n\n`.ss <url>`\
 \nUsage: Takes a screenshot of a website and sends the screenshot.\
-\nExample of a valid URL : `https://www.google.com`\
+\nExample of a valid URL : `google.com` or `https://www.google.com`\
 \n\n`.imdb` movie/series name\
 \nUsage:scrap movie/series information."
 })

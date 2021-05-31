@@ -39,7 +39,7 @@ Deploy to Heroku:
 
 If you want new features, or announcements, you can follow our [oub-remix Channel](https://t.me/oubremix).
 
-For discussion, bug reporting, and help, you can join [oub-remix support Group](https://t.me/remixsupport).
+For discussion, bug reporting, and help, you can join [oub-remix support Group](https://t.me/mellolab).
 
 ## How to setup Google Drive
 [![SetGDRIVE](https://telegra.ph/file/fde15d05e4bde3448b01a.png)](https://telegra.ph/How-To-Setup-Google-Drive-04-03)

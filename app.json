@@ -1,6 +1,6 @@
 {
-  "name": "OPEN USERBOT REMIX",
-  "description": "[OUB-REMIX] A modular Telegram userbot running on Python 3.7+ with an sqlalchemy database, which can be coupled up with Mongo DB and a Redis backend",
+  "name": "Userbot",
+  "description": "[UserBot] A modular Telegram userbot running on Python 3.7+ with an sqlalchemy database, which can be coupled up with Mongo DB and a Redis backend",
   "logo": "https://telegra.ph/file/d201a0cc4d7d5f420c419.jpg",
   "keywords": [
     "telegram",
@@ -160,11 +160,11 @@
     },
     "DEFAULT_BIO": {
       "description": "Default profile bio.",
-      "value": "[PM = Report Spam] I ❤ ️@oub-remix",
+      "value": "[PM = Report Spam] I ❤ ️@omellolab",
       "required": false
     },
     "ALIVE_NAME": {
-      "description": "Name to show in .alive message",
+      "description": "Name to show in .start message",
       "required": false
     },
     "G_DRIVE_DATA": {

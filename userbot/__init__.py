@@ -160,7 +160,7 @@ BOT_VER = os.environ.get("BOT_VER", "4.0")
 
 # Default .alive logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/2bda28645111c274f490d.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/b8580ec51a4193ff9a906.jpg"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -362,7 +362,7 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
-                await event.reply("I'm [UserBot](https://github.com/marshmello61/UserBot) modules helper...\nplease make your own bot, don't use mine 😋")
+                await event.reply("I'm [MelloBot](https://github.com/marshmello61/UserBot) modules helper...\nplease make your own bot, don't use mine 😋")
             else:
                 await event.reply(f"`Hey there {ALIVE_NAME}\n\nI work for you :)`")
 

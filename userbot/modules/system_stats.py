@@ -222,14 +222,15 @@ async def amireallyalive(alive):
     """ For .start command, check if the bot is running.  """
     logo = ALIVE_LOGO
     uptime = await get_readable_time((time.time() - StartTime))
-    output = (f"      // Project UserBot //      \n"
-             f"`Status`: UserBot is working fine af\n"
+    output = (f"      // Project MelloBot //      \n"
+             f"`Status`: MelloBot is working fine af\n"
              f"`Telethon version`: {version.__version__} \n"
              f"`Python version`: {python_version()} \n"
-             f"`Bot Version`: Project UserBot {BOT_VER} \n"
+             f"`Bot Version`: Project MelloBot {BOT_VER} \n"
              f"====================================\n"
              f"`User`: {DEFAULTUSER} \n"
              f"`Maintainer`: @marshmello_61 \n"
+             f"`Follow`: @MelloLab \n"
              f"`Bot Uptime️`: {uptime} \n"
              f"====================================\n")
     if ALIVE_LOGO:

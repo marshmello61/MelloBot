@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.com/sahyam2019/oub-remix.svg?branch=sql-extended)](https://travis-ci.com/sahyam2019/oub-remix) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/38fee611df7c4312be63a15cad64a50a)](https://www.codacy.com/manual/sahyam2019/oub-remix?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sahyam2019/oub-remix&amp;utm_campaign=Badge_Grade) ![Last Commit](https://img.shields.io/github/last-commit/sahyam2019/oub-remix) ![Contributers](https://img.shields.io/github/contributors/sahyam2019/oub-remix) ![Forks](https://img.shields.io/github/forks/sahyam2019/oub-remix)     
-# Project OpenUserBot Remix (CLOSED NOW)
+[![Build Status](https://travis-ci.com/sahyam2019/oub-remix.svg?branch=sql-extended)](https://travis-ci.com/sahyam2019/oub-remix) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/38fee611df7c4312be63a15cad64a50a)](https://www.codacy.com/manual/sahyam2019/oub-remix?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sahyam2019/oub-remix&amp;utm_campaign=Badge_Grade) ![Last Commit](https://img.shields.io/github/last-commit/marshmello61/UserBot) ![Contributers](https://img.shields.io/github/contributors/marshmello61/UserBot) ![Forks](https://img.shields.io/github/forks/marshmello61/UserBot)     
+# Project MelloBot
 
-![logo](https://telegra.ph/file/b17eb811d1666426e7f3b.jpg)
+![logo](https://telegra.ph/file/931322c1de82358f4dacc.jpg)
 
 ```
 #include <std/disclaimer.h>
@@ -23,9 +23,8 @@
     #stayremixed
 /**
 ```
-## Guide
-
-[Click here](https://del.dog/nifimecyck)
+## Guide to make MelloBot
+[Click here for steps](https://del.dog/nifimecyck)
 
 ## How To Host?
 
@@ -37,9 +36,7 @@ Deploy to Heroku:
 
 ## Groups and support
 
-If you want new features, or announcements, you can follow our [oub-remix Channel](https://t.me/oubremix).
-
-For discussion, bug reporting, and help, you can join [oub-remix support Group](https://t.me/mellolab).
+For discussion, bug reporting, and help, you can join [MelloLab](https://t.me/mellolab).
 
 ## How to setup Google Drive
 [![SetGDRIVE](https://telegra.ph/file/fde15d05e4bde3448b01a.png)](https://telegra.ph/How-To-Setup-Google-Drive-04-03)

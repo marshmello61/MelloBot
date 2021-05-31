@@ -1,7 +1,7 @@
 {
-  "name": "Userbot",
-  "description": "[UserBot] A modular Telegram userbot running on Python 3.7+ with an sqlalchemy database, which can be coupled up with Mongo DB and a Redis backend",
-  "logo": "https://telegra.ph/file/d201a0cc4d7d5f420c419.jpg",
+  "name": "#MELLOLAB USERBOT",
+  "description": "[MelloBot] A modular Telegram userbot running on Python 3.7+ with an sqlalchemy database, which can be coupled up with Mongo DB and a Redis backend",
+  "logo": "https://telegra.ph/file/f0082cfc1dbca61632a33.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -108,7 +108,7 @@
     },
     "PM_AUTO_BAN": {
       "description": "PM Auto-Ban Feature Switch. Also known as the 'bleep blop, this is a bot...' module.",
-      "value": "False"
+      "value": "True"
     },
     "OCR_SPACE_API_KEY": {
       "description": "OCR API Key for .ocr command. Get from https://ocr.space/ocrapi",
@@ -160,7 +160,7 @@
     },
     "DEFAULT_BIO": {
       "description": "Default profile bio.",
-      "value": "[PM = Report Spam] I ❤ ️@omellolab",
+      "value": "[PM = Report Spam] I ❤ ️@MelloLab",
       "required": false
     },
     "ALIVE_NAME": {
@@ -198,7 +198,7 @@
       "value": "True"
     },
     "ALIVE_LOGO": {
-      "description": "Show Image/Logo in .alive message. Fill value of image your link image, use telegra.ph / i.ibb.co to get your own image",
+      "description": "Show Image/Logo in .start message. Fill value of image your link image, use telegra.ph / i.ibb.co to get your own image",
       "required": false
     },
     "DEEZER_ARL_TOKEN": {

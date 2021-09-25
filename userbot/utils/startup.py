@@ -22,7 +22,7 @@ from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
 
-LOGS = logging.getLogger("CatUserbot")
+LOGS = logging.getLogger("MelloBot")
 cmdhr = Config.COMMAND_HAND_LER
 
 
@@ -64,8 +64,8 @@ async def startupmessage():
             Config.CATUBLOGO = await catub.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/4e3ba8e8f7e535d5a2abe.jpg",
-                caption="**Your CatUserbot has been started successfully.**",
-                buttons=[(Button.url("Support", "https://t.me/catuserbot"),)],
+                caption="**Your MelloBot has been started successfully.**",
+                buttons=[(Button.url("Support", "https://t.me/mellolab"),)],
             )
     except Exception as e:
         LOGS.error(e)
@@ -208,7 +208,7 @@ async def verifyLoggerGroup():
     else:
         descript = "Don't delete this group or change to group(If you change group all your previous snips, welcome will be lost.)"
         _, groupid = await create_supergroup(
-            "CatUserbot BotLog Group", catub, Config.TG_BOT_USERNAME, descript
+            "MelloBot BotLog Group", catub, Config.TG_BOT_USERNAME, descript
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
         print(

@@ -222,11 +222,11 @@ async def inline_handler(event):  # sourcery no-metrics
         match2 = re.findall(inf, query)
         hid = re.compile("hide (.*)")
         match3 = re.findall(hid, query)
-        if query.startswith("**Catuserbot"):
+        if query.startswith("**MelloBot"):
             buttons = [
                 (
                     Button.inline("Stats", data="stats"),
-                    Button.url("Repo", "https://github.com/sandy1709/catuserbot"),
+                    Button.url("Repo", "https://github.com/marshmello61/MelloBot"),
                 )
             ]
             ALIVE_PIC = gvarstatus("ALIVE_PIC")
@@ -420,8 +420,8 @@ async def inline_handler(event):  # sourcery no-metrics
         elif string == "help":
             _result = main_menu()
             result = builder.article(
-                title="© CatUserbot Help",
-                description="Help menu for CatUserbot",
+                title="© MelloBot Help",
+                description="Help menu for MelloBot",
                 text=_result[0],
                 buttons=_result[1],
                 link_preview=False,
@@ -557,7 +557,7 @@ async def inline_handler(event):  # sourcery no-metrics
     else:
         buttons = [
             (
-                Button.url("Source code", "https://github.com/sandy1709/catuserbot"),
+                Button.url("Source code", "https://github.com/marshmello61/mellobot"),
                 Button.url(
                     "Deploy",
                     "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FMr-confused%2Fcatpack&template=https%3A%2F%2Fgithub.com%2FMr-confused%2Fcatpack",
@@ -569,14 +569,14 @@ async def inline_handler(event):  # sourcery no-metrics
             url=CATLOGO, size=0, mime_type="image/jpeg", attributes=[]
         )
         text, msg_entities = await event.client._parse_message_text(
-            "𝗗𝗲𝗽𝗹𝗼𝘆 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗖𝗮𝘁𝗨𝘀𝗲𝗿𝗯𝗼𝘁.", "md"
+            "𝗗𝗲𝗽𝗹𝗼𝘆 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 MelloB𝗼𝘁.", "md"
         )
         result = types.InputBotInlineResult(
             id=str(uuid4()),
             type="photo",
-            title="𝘾𝙖𝙩𝙐𝙨𝙚𝙧𝙗𝙤𝙩",
+            title="MelloBot",
             description="Deploy yourself",
-            url="https://github.com/sandy1709/catuserbot",
+            url="https://github.com/marshmello61/mellobot",
             thumb=photo,
             content=photo,
             send_message=types.InputBotInlineMessageMediaAuto(

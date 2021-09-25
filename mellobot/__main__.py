@@ -7,7 +7,7 @@ import telethon.utils
 from telethon import TelegramClient
 
 from var import Var
-from firebot import bot
+from mellobot import bot
 from firebot.Configs import Config
 from firebot.utils import load_module, start_assistant
 

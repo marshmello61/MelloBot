@@ -1,4 +1,4 @@
 echo """
-    FIREBOT
+    Project MelloBot
 """
-python3 -m firebot
+python3 -m mellobot

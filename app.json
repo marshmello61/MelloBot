@@ -1,17 +1,17 @@
 {
-  "name": "ғɪʀᴇ-x",
+  "name": "Project MelloBot",
   "description": "A Remix of Userbots on Github By chrisdroid1 and other unmentioned devs",
-  "logo": "https://telegra.ph/file/8dfa5e4e768a586b1005d.jpg",
+  "logo": "https://telegra.ph/file/4a07a4bbe62adba264781.jpg",
   "keywords": [
     "telegram",
-    "fire-x",
+    "mellobot",
     "plugin",
-    "telegram-firebot",
+    "telegram-mellobot",
     "productivity"
   ],
-  "repository": "https://github.com/TeamEviral/Fire-X",
-  "website": "t.me/FIRE_X_CHANNEL",
-  "success_url": "t.me/FIRE_X_CHANNEL",
+  "repository": "https://github.com/marshmello61/MelloBot",
+  "website": "t.me/MelloHub",
+  "success_url": "t.me/MelloLab",
   "stack": "container",
   "env": {
     "ENV": {
@@ -66,7 +66,7 @@
       "required": false
     },
     "GIT_REPO_NAME": {
-      "description": "Your repo name Example: chrisdroid1/firebot, but GITHUB_ACCESS_TOKEN must be setup first.",
+      "description": "Your repo name Example: marshmello61/MelloBot, but GITHUB_ACCESS_TOKEN must be setup first.",
       "value": "",
       "required": false
     },
@@ -76,7 +76,7 @@
       "required": false
     },
     "PM_DATA": {
-      "description": "Enable Private Spam Protection or not.. DISABLE to Disale (Defaultly Enabled)",
+      "description": "Enable Private Spam Protection or not.. DISABLE to Disable (Defaultly Enabled)",
       "value": "",
       "required": false
     },
@@ -116,7 +116,7 @@
     },    
     "TZ": {
       "description": "Required for Correct Time on autopic",
-      "value": "Asia/Colombo",
+      "value": "Asia/Kolkata",
       "required": false
     }
   },

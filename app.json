@@ -1,13 +1,13 @@
 {
-  "name": "Catuserbot",
-  "description": "A simple Telegram userbot based on Telethon . Maintained by Sandeep ",
-  "logo": "https://telegra.ph/file/3d60313110c58684b31ea.jpg",
+  "name": "Project MelloBot",
+  "description": "A simple Telegram userbot based on Telethon . Maintained by Mayur ",
+  "logo": "https://telegra.ph/file/f0082cfc1dbca61632a33.jpg",
   "keywords": [
     "plugin",
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/sandy1709/catuserbot/",
+  "repository": "https://github.com/marshmello61/mellobot/",
   "website": "#TODO",
   "success_url": "#TODO",
   "env": {

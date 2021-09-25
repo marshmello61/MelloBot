@@ -1,7 +1,7 @@
-FROM sandy1709/catuserbot:slim-buster
+FROM marshmello61/MelloBot:slim-buster
 
 #clonning repo 
-RUN git clone https://github.com/sandy1709/catuserbot.git /root/userbot
+RUN git clone https://github.com/marshmello61/mellobot.git -b cat /root/userbot
 #working directory 
 WORKDIR /root/userbot
 

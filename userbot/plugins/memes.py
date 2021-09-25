@@ -1,7 +1,7 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.
 # Licensed under the Raphielscape Public License, Version 1.b (the "License");
 # you may not use this file except in compliance with the License.
-# catUserbot module for having some fun with people.
+# MelloBot module for having some fun with people.
 import asyncio
 import random
 import re
@@ -111,9 +111,9 @@ async def get_user(event):
             "{tr}<type>say <text>",
         ],
         "examples": [
-            "{tr}squirrelsay Catuserbot",
-            "{tr}milksay catuserbot",
-            "{tr}ghostbustersghostbusterssay Catuserbot",
+            "{tr}squirrelsay MelloBot",
+            "{tr}milksay MelloBot",
+            "{tr}ghostbustersghostbusterssay MelloBot",
         ],
     },
 )

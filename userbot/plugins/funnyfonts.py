@@ -15,7 +15,7 @@ plugin_category = "fun"
     info={
         "header": "stretches the given text",
         "usage": ["{tr}str <text>", "{tr}str reply this command to text message"],
-        "examples": "{tr}str catuserbot",
+        "examples": "{tr}str MelloBot",
     },
 )
 async def stretch(stret):
@@ -42,7 +42,7 @@ async def stretch(stret):
     info={
         "header": "chages given text into some funny way",
         "usage": ["{tr}zal <text>", "{tr}zal reply this command to text message"],
-        "examples": "{tr}zal catuserbot",
+        "examples": "{tr}zal MelloBot",
     },
 )
 async def zal(zgfy):
@@ -86,7 +86,7 @@ async def zal(zgfy):
     info={
         "header": "chages given text into some funny way",
         "usage": ["{tr}cp <text>", "{tr}cp reply this command to text message"],
-        "examples": "{tr}cp catuserbot",
+        "examples": "{tr}cp MelloBot",
     },
 )
 async def copypasta(cp_e):
@@ -125,7 +125,7 @@ async def copypasta(cp_e):
     info={
         "header": "chages given text into some funny way",
         "usage": ["{tr}weeb <text>", "{tr}weeb reply this command to text message"],
-        "examples": "{tr}weeb catuserbot",
+        "examples": "{tr}weeb MelloBot",
     },
 )
 async def weebify(event):
@@ -154,7 +154,7 @@ async def weebify(event):
             "{tr}downside <text>",
             "{tr}downside reply this command to text message",
         ],
-        "examples": "{tr}downside catuserbot",
+        "examples": "{tr}downside MelloBot",
     },
 )
 async def stylish_generator(event):
@@ -185,7 +185,7 @@ async def stylish_generator(event):
             "{tr}subscript <text>",
             "{tr}subscript reply this command to text message",
         ],
-        "examples": "{tr}subscript catuserbot",
+        "examples": "{tr}subscript MelloBot",
     },
 )
 async def stylish_generator(event):
@@ -216,7 +216,7 @@ async def stylish_generator(event):
             "{tr}superscript <text>",
             "{tr}superscript reply this command to text message",
         ],
-        "examples": "{tr}superscript catuserbot",
+        "examples": "{tr}superscript MelloBot",
     },
 )
 async def stylish_generator(event):

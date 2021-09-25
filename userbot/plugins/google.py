@@ -74,10 +74,10 @@ async def scam(results, lim):
             "{tr}gs <query>",
         ],
         "examples": [
-            "{tr}gs catuserbot",
-            "{tr}gs -l6 catuserbot",
-            "{tr}gs -p2 catuserbot",
-            "{tr}gs -p2 -l7 catuserbot",
+            "{tr}gs MelloBot",
+            "{tr}gs -l6 MelloBot",
+            "{tr}gs -p2 MelloBot",
+            "{tr}gs -p2 -l7 MelloBot",
         ],
     },
 )

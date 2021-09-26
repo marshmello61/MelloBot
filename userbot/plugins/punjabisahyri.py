@@ -10,7 +10,7 @@ import random
 from userbot import ALIVE_NAME
 from userbot.utils import lightning_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@lightning_support_group"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@Mellolab"
 
 sawan = bot.uid
 

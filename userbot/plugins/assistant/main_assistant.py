@@ -39,7 +39,7 @@ async def start(event):
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
     firstname = replied_user.user.first_name
     vent = event.chat_id
-    starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy [➤ Master](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [вℓα¢к ℓιgнтηιηg](https://t.me/lightning_support_group)"
+    starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy [➤ Master](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [MelloBot](https://t.me/Mellolab)"
     if event.sender_id == bot.uid:
         await tgbot.send_message(
             vent,
@@ -65,7 +65,7 @@ async def start(event):
             link_preview=False,
             buttons=[
                 [custom.Button.inline("Deploy your BL ", data="deploy")],
-                [Button.url("Help Me ❓", "https://t.me/lightning_support_group")],
+                [Button.url("Help Me ❓", "https://t.me/Mellolab")],
                 [Button.url("Lightning Web💫", "https://lightninguserbot.blogspot.com")],
             ],
         )
@@ -88,7 +88,7 @@ async def help(event):
                         "https://www.youtube.com/watch?v=GfZMqrCAqxI",
                     )
                 ],
-                [Button.url("Need Help ❓", "https://t.me/lightning_support_group")],
+                [Button.url("Need Help ❓", "https://t.me/Mellolab")],
                 [Button.url("Lightning Web💫", "https://lightninguserbot.blogspot.com")],
             ],
         )

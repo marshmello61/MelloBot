@@ -6,9 +6,9 @@ from userbot import ALIVE_NAME, TG_CHANNEL, TG_GRUP
 from userbot.thunderconfig import Config
 from userbot.utils import lightning_cmd
 
-LIGHTNING_ALV_IMG = os.environ.get("LIGHTNING_ALV_IMG", None)
-if not LIGHTNING_ALV_IMG:
-    LIGHTNING_ALV_IMG = "https://telegra.ph/file/b01cd4ef19edc14195648.mp4"
+MELLO_ALV_IMG = os.environ.get("MELLO_ALV_IMG", None)
+if not MELLO_ALV_IMG:
+    MELLO_ALV_IMG = "https://telegra.ph/file/b8580ec51a4193ff9a906.jpg"
 
 
 
@@ -43,7 +43,7 @@ def lightning_Read_time(seconds: int) -> str:
 
     return kirsh
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "вℓα¢к ℓιgнтηιηg"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "MelloBot"
 
 TG = str(TG_GRUP) if TG_GRUP else "Not  Yet😁😁"
 TG_CHANN = str(TG_CHANNEL) if TG_CHANNEL else "Not Yet😁😁"
@@ -51,18 +51,17 @@ TG_CHANN = str(TG_CHANNEL) if TG_CHANNEL else "Not Yet😁😁"
 
 from userbot import CMD_LIST
 
-pm_caption = "**BLACK LIGHTNING is on fire**\n\n"
-pm_caption += f"**MASTER**           : {DEFAULTUSER}\n"
-pm_caption += "**VERSION**        : 1.17.5\n"
-pm_caption += "**CHANNEL**        : [CHANNEL](https://t.me/black_lightning_channel)\n"
-pm_caption += "**Support Group**           : [SUPPORT GROUP](https://t.me/lightning_support_group)\n"
+pm_caption = "**// Project MelloBot running fine af //**\n\n"
+pm_caption += f"**User**: {DEFAULTUSER}\n"
+pm_caption += "**VERSION** : 1.17.5\n"
+pm_caption += "**CHANNEL** : [CHANNEL](https://t.me/Mellohub)\n"
+pm_caption += "**Support Group** : [SUPPORT GROUP](https://t.me/Mellolab)\n"
 
-pm_caption += "[┏┓━┏┓━━━━┏┓━┏┓━━━━━\n┃┃━┃┃━━━━┃┃━┃┃━━━━━\n┃┗━┛┃┏━━┓┃┃━┃┃━┏━━┓\n┃┏━┓┃┃┏┓┃┃┃━┃┃━┃┏┓┃\n┃┃━┃┃┃┃━┫┃┗┓┃┗┓┃┗┛┃\n┗┛━┗┛┗━━┛┗━┛┗━┛┗━━┛](https://t.me/black_lightning_channel)"
 
 @borg.on(lightning_cmd(pattern=r"alive"))
 @borg.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
 async def lightning(alive):
     await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
-    await borg.send_file(alive.chat_id, file=LIGHTNING_ALV_IMG, caption=pm_caption, link_preview=False)
+    await borg.send_file(alive.chat_id, file=MELLO_ALV_IMG, caption=pm_caption, link_preview=False)
     await alive.delete()

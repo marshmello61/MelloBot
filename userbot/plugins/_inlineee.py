@@ -185,7 +185,7 @@ async def _(event):
 
 BOT_MSG = os.environ.get("BOT_MSG", None)
 if BOT_MSG is None:
-    BOT_LIT = f"Hey! This is adavanced PM Protection by [𝐁𝐥𝐚𝐜𝐤 𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠](https://t.me/lightning_support_group). "
+    BOT_LIT = f"Hey! This is adavanced PM Protection by [𝐁𝐥𝐚𝐜𝐤 𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠](https://t.me/Mellolab). "
 else:
     BOT_LIT = BOT_MSG   
 
@@ -242,10 +242,10 @@ async def inline_handler(lightning):
             buttons=[
                 [custom.Button.inline("Help Menu😎", data="what?"),
                 custom.Button.inline("Ping🙃", data="bitch")],
-                [Button.url("Support Group🥺", "https://t.me/lightning_support_group")],
+                [Button.url("Support Group🥺", "https://t.me/Mellolab")],
                 [Button.url("Help Article🤓", "https://app.gitbook.com/@poxsisofficial/s/help/")],
                 [Button.url("Get Updates😅",
-                    "https://t.me/black_lightning_channel"
+                    "https://t.me/Mellohub"
                     )
                 ], 
             ],
@@ -316,7 +316,7 @@ async def lightning_pugins_query_hndlr(lightning):
        
        lightning_help_strin  = f"**🔺 NAME 🔺 :** `{light_pulu_name}` \n\n{CMD_HELP[light_pulu_name]}"
        lightning_is_best = lightning_help_strin 
-       lightning_is_best += "\n\n**In Case Any Problem**[𝐁𝐥𝐚𝐜𝐤 𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠](https://t.me/lightning_support_group) ".format(light_pulu_name)
+       lightning_is_best += "\n\n**In Case Any Problem**[𝐁𝐥𝐚𝐜𝐤 𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠](https://t.me/Mellolab) ".format(light_pulu_name)
     
     else:
        lightning_help_strin  = f"**🔺 NAME 🔺 :** `{light_pulu_name}` \n\n`{CMD_LIST[light_pulu_name]}`\n\n**Ask at @Lightning_Support_Group"
@@ -589,10 +589,10 @@ async def lmaao(lightning):
             buttons=[
                 [custom.Button.inline("Help Menu😎", data="what?"),
                 custom.Button.inline("Ping🙃", data="bitch")],
-                [Button.url("Support Group🥺", "https://t.me/lightning_support_group")],
+                [Button.url("Support Group🥺", "https://t.me/Mellolab")],
                 [Button.url("Help Article🤓", "https://app.gitbook.com/@poxsisofficial/s/help/")],
                 [Button.url("Get Updates😅",
-                    "https://t.me/lightning_support_group" ,
+                    "https://t.me/Mellolab" ,
                     )
                 ], 
             ]
@@ -619,7 +619,7 @@ async def ho(event):
     # This Is Copy of Above Code. (C) @SpEcHiDe
     buttons = lightnings_menu_for_help(0, CMD_LIST, "helpme")
     ho = f"""MelloBot Is Here With Stunning Help !\n
-In Case Any Problem [𝐁𝐥𝐚𝐜𝐤 𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠](https://t.me/lightning_support_group) \nTottal Plugs( ͡🔥 ͜ʖ ͡🔥): {len(CMD_LIST)}"""
+In Case Any Problem [𝐁𝐥𝐚𝐜𝐤 𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠](https://t.me/Mellolab) \nTottal Plugs( ͡🔥 ͜ʖ ͡🔥): {len(CMD_LIST)}"""
     await event.edit(message=ho, buttons=buttons)
 
 

@@ -4,7 +4,7 @@
 from var import Var
 from userbot.utils import lightning_cmd, bot
 from userbot import ALIVE_NAME
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "вℓα¢к ℓιgнтηιηg"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "MelloBot"
 picture = "resources.botpic.jpg"
 @bot.on(lightning_cmd(pattern="devbut")) 
 

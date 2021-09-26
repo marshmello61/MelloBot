@@ -40,7 +40,7 @@ else:
 
 LIGHTNING_PM = os.environ.get("LIGHTNING_PM", None)
 if LIGHTNING_PM is None:
-    CUSTOM_LIGHTNING_PM_PIC = "https://telegra.ph/file/53aed76a90e38779161b1.jpg"
+    CUSTOM_LIGHTNING_PM_PIC = "https://telegra.ph/file/f0082cfc1dbca61632a33.jpg"
 else:
     CUSTOM_LIGHTNING_PM_PIC = LIGHTNING_PM
 FUCK_OFF_WARN = f"**Blocked You As You Spammed {LIGHTNINGUSER}'s DM\n\n **IDC**"
@@ -49,10 +49,10 @@ FUCK_OFF_WARN = f"**Blocked You As You Spammed {LIGHTNINGUSER}'s DM\n\n **IDC**"
 
 
 OVER_POWER_WARN = (
-    f"**Hello Sir Im Here To Protect {LIGHTNINGUSER} Dont Under Estimate Me I Am Very Powerful😂😂  **\n\n"
+    f"**Hello Sir Im Here To Protect {LIGHTNINGUSER} Dont Under Estimate Me I Am Very Powerful**\n\n"
     f"`My Master {LIGHTNINGUSER} is Busy Right Now !` \n"
     f"{LIGHTNINGUSER} Is Very Busy Why Came Please Lemme Know Choose Your Deasired Reason"
-    f"**Btw Dont Spam Or Get Banned** 😂😂 \n\n"
+    f"**Btw Dont Spam Or Get Banned**  \n\n"
     f"**{CUSTOM_LIGHTNING_PM_PIC}**\n"
 )
 

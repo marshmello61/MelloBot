@@ -82,7 +82,7 @@ async def get_full_user(event):
 
         except Exception as err:
 
-            return await event.edit("Error... Please report at @lightning_support_group", str(err))           
+            return await event.edit("Error... Please report at @Mellolab", str(err))           
 
     return user_obj, extra
 

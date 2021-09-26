@@ -24,7 +24,7 @@ pm_caption += f"► **Assistant Version** : `{currentversion}`\n"
 pm_caption += f"► **My Master** : {DEFAULTUSER} \n"
 pm_caption += "► **License** : [GNU General Public License v3.0](https://github.com/KeinShin/Black-Lightning/blob/master/LICENSE)\n"
 pm_caption += "► **Copyright** : [Black Lighting](GitHub.com/keinshin/Black-Lightning)\n"
-light = [[Button.url("✧Repos✧", "https://github.com/KeinShin/Black-Lightning"), Button.url("✧Support✧", "https://t.me/lightning_support_group")]]
+light = [[Button.url("✧Repos✧", "https://github.com/KeinShin/Black-Lightning"), Button.url("✧Support✧", "https://t.me/Mellolab")]]
 light +=[[custom.Button.inline("✧Help✧", data="gibcmd")]]
 @tgbot.on(events.NewMessage(pattern="^/alive" , func=lambda e: e.sender_id == bot.uid))
 async def _(event):

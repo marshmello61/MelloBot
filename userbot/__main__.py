@@ -15,7 +15,7 @@ from userbot.utils import load_assistant, load_module, start_assistant
 TELE = Var.PRIVATE_GROUP_ID
 BOTNAME = Var.TG_BOT_USER_NAME_BF_HER
 LOAD_MYBOT = Var.LOAD_MYBOT
-sed = logging.getLogger("Black Lightning")
+sed = logging.getLogger("MelloBot")
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
@@ -27,7 +27,7 @@ async def startup_log_all_done():
     try:
         await bot.send_message(
             TELE,
-            f"**Black Lightning has been deployed.\nSend** `{CMD_HNDLR}alive` **to see if the bot is working.\n\nAdd** @{BOTNAME} **to this group and make it admin for enabling all the features of userbot**",
+            f"*MelloBot has been deployed.\nSend** `{CMD_HNDLR}alive` **to see if the bot is working.\n\nAdd** @{BOTNAME} **to this group and make it admin for enabling all the features of userbot**",
         )
     except BaseException:
         print("Either PRIVATE_GROUP_ID is wrong or you have left the group.")
@@ -61,9 +61,9 @@ for name in files:
          load_module(shortname.replace(".py", ""))
         except Exception:
             pass
-print("Lightning has been deployed! ")
+print("MelloBot has been deployed! ")
 
-print("Setting up Lightning")
+print("Setting up MelloBot")
 
 
 if Config.ENABLE_ASSISTANTBOT == "ENABLE":
@@ -79,21 +79,18 @@ if Config.ENABLE_ASSISTANTBOT == "ENABLE":
              load_assistant(shortname.replace(".py", ""))
             except Exception:
                 pass
-    sed.info("Black Lightning Has Been Deployed Successfully !")
-    sed.info("╔════❰ Ⲃⲟⲧ Ⲓⲛϝⲟʀⲙⲁⲧⲓⲟⲛ ❱═❍⊱❁۪۪")
-    sed.info("║┣⪼ Ⲟⲱⲛⲉʀ - ʙʟᴀᴄᴋ-ʟɪɢʜᴛɴɪɴɢ ᴜꜱᴇʀ ")
-    sed.info("║┣⪼ Ⲋⲧⲁⲧυⲋ - Ⲟⲛⳑⲓⲛⲉ")
-    sed.info("║┣⪼ Ⲃⲟⲧ Ⳳⲉʀⲋⲓⲟⲛ - 1.2.0")   
-    sed.info("║┣⪼ Ⳙⲣⲧⲓⲙⲉ - 00h:00m:4s ")
-    sed.info("║┣⪼ Ⲃⲟⲧ Ⲣⲓⲛⳋ - 0.006")
-    sed.info("║┣⪼ Ⲣⲩⲧⲏⲟⲛ - 3.9.2")
-    sed.info("║┣⪼ Ⲧⲉⳑⲉⲧⲏⲟⲛ - 1.17.0 ")
-    sed.info("║┣⪼ ✨𝐁𝐥𝐚𝐜𝐤-𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐔𝐬𝐞𝐫𝐛𝐨𝐭✨")
-    sed.info("║╰━━━━━━━━━━━━━━━➣ ")
-    sed.info("╚══════════════════❍⊱❁۪۪")
+    sed.info("Prject MelloBot Has Been Deployed Successfully !")
+    sed.info("╔═════════ Bot Info ═══")
+    sed.info("║ Owner - Project mellobot user")
+    sed.info("║ Status -  Online")
+    sed.info("║ Bot version - 1.2.0")   
+    sed.info("║ Python 3.9.2")
+    sed.info("║ Telethon - 1.17.0 ")
+    sed.info("║ // Project MelloBot //")
+    sed.info("╚═════════════════════")
 else:
-    sed.info("Black Lightning Has Been Installed Sucessfully !")
-    sed.info("You Can Visit @lightning_support For Any Support Or Doubts")
+    sed.info("MelloBot Has Been Installed Sucessfully !")
+    sed.info("You Can Visit @mellolab For Any Support Or Doubts")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()

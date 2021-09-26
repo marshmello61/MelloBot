@@ -9,7 +9,7 @@ from userbot.utils import lightning_cmd
 import asyncio
 from .. import ALIVE_NAME, CMD_HELP
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Black Lightning"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "MelloBot"
 DEFAULTUSERBIO = "404: No bio found!"
 if Var.PRIVATE_GROUP_ID is None:
     BOTLOG = False

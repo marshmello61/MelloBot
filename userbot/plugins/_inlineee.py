@@ -366,7 +366,7 @@ async def lightning_pugins_query_hndlr(lightning):
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"what?")))
 async def what(lightning):
     if lightning.query.user_id == bot.uid:
-        fck_bit = "**Black Lightning Heres With The Detailed Help For CMDs** 😉😉 ! "
+        fck_bit = "**MelloBot Heres With The Detailed Help For CMDs** 😉😉 ! "
         buttons = lightnings_menu_for_help(0, CMD_LIST, "helpme")
         await lightning.edit(fck_bit, buttons=buttons)
     else:
@@ -618,7 +618,7 @@ async def ho(event):
     await event.answer("( ͡🔥 ͜ʖ ͡🔥)", cache_time=0, alert=False)
     # This Is Copy of Above Code. (C) @SpEcHiDe
     buttons = lightnings_menu_for_help(0, CMD_LIST, "helpme")
-    ho = f"""Black Lightning Is Here With Stunning Help !\n
+    ho = f"""MelloBot Is Here With Stunning Help !\n
 In Case Any Problem [𝐁𝐥𝐚𝐜𝐤 𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠](https://t.me/lightning_support_group) \nTottal Plugs( ͡🔥 ͜ʖ ͡🔥): {len(CMD_LIST)}"""
     await event.edit(message=ho, buttons=buttons)
 

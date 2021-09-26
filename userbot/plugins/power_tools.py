@@ -15,7 +15,7 @@ from uniborg.util import lightning_cmd
 @borg.on(lightning_cmd(pattern="restart"))
 async def _(event):
     await event.edit(
-        "Black Lightning restarted successfully. Wait for 2-3 minutes to complete all processes."
+        "MelloBot restarted successfully. Wait for 2-3 minutes to complete all processes."
     )
     await borg.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)

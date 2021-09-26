@@ -59,7 +59,7 @@ async def _(event):
                 ms_two = (end - start).seconds
                 os.remove(downloaded_file_name)
                 await event.edit(
-                    "Your Telegraph Link by Black Lightning https://telegra.ph{} \n ".format(
+                    "Your Telegraph Link by MelloBot https://telegra.ph{} \n ".format(
                         media_urls[0], (ms + ms_two)
                     ),
                     link_preview=False,

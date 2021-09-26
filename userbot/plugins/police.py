@@ -3,7 +3,7 @@ import asyncio
 from uniborg.util import lightning_cmd
 from userbot import ALIVE_NAME
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Black Lightning"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "MelloBot"
 
 
 @borg.on(lightning_cmd(pattern=r"police"))

@@ -29,7 +29,7 @@ async def _(event):
     await event.edit("Deploying...")
 
     animation_chars = [
-        "**Heroku Connecting To Latest Github Build (Anmol-dot283/Black Lightning)**",
+        "**Heroku Connecting To Latest Github Build (Anmol-dot283/MelloBot)**",
         "**Build started by user** **{DEFAULTUSER}**",
         "**Deploy** `535a74f0` **by user** **{MY BOSS}**",
         "**Restarting Heroku Server...**",
@@ -38,8 +38,8 @@ async def _(event):
         "**Process exited with** `status 143`",
         "**Starting process with command** `python3 -m stdborg`",
         "**State changed from starting to up**",
-        "__INFO:Black Lightning:Logged in as 557667062__",
-        "__INFO:Black Lightning:Successfully loaded all plugins__",
+        "__INFO:MelloBot:Logged in as 557667062__",
+        "__INFO:MelloBot:Successfully loaded all plugins__",
         "**Build Succeeded**",
     ]
 

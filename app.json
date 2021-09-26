@@ -1,7 +1,7 @@
 {
-    "name": "Black Lightning - UserBot",
-    "description": "An advanced Telethon Userbot, from @keinshin",
-    "logo": "https://telegra.ph/file/d8d194c18562472a7c1f1.jpg",
+    "name": "// Project MeelloBot //",
+    "description": "An advanced Telethon Userbot, from @marshmello61",
+    "logo": "https://telegra.ph/file/f0082cfc1dbca61632a33.jpg",
     "keywords": [
      "telegram",
      "userbot",
@@ -9,9 +9,9 @@
      "modular",
      "productivity"
     ],
-    "repository": "https://github.com/KeinShin/Black-Lightning",
-    "website": "https://github.com/KeinShin/Black-Lightning",
-    "success_url": "https://t.me/blacklightningot",
+    "repository": "https://github.com/marshmello61/mellobot",
+    "website": "https://github.com/marshmello61/mellobot",
+    "success_url": "https://t.me/mellolab",
     "stack": "container",
     "env": {
      "APP_ID": {
@@ -36,7 +36,7 @@
       "value": "",
       "required": true
      },
-      "LIGHTNING_ALV_IMG": {
+      "MELLO_ALV_IMG": {
       "description": "To add another Alive pic, Leave blank for default. ",
       "value": "",
       "required": false

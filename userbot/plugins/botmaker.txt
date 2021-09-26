@@ -29,7 +29,7 @@ async def _(event):
    await conv.get_response()
    await conv.send_message(name)
    await conv.get_reponse()
-   await conv.send_message("Heyy there🤙\nThis Black Lightning Userbot🇮🇳\nI am here to provide Assistant service to {DEFAULTUSER}😎\nYou can Message me to contact my Master😉")
+   await conv.send_message("Heyy there🤙\nThis MelloBot Userbot🇮🇳\nI am here to provide Assistant service to {DEFAULTUSER}😎\nYou can Message me to contact my Master😉")
    await conv.get_reponse()
    await conv.send_message("/setabouttext")
    await conv.get_reponse()

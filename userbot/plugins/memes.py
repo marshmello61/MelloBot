@@ -660,7 +660,7 @@ HIT = [
 
 @register(outgoing=True, pattern=r"^.(\w+)say (.*)")
 async def univsaye(cowmsg):
-    """ For .cowsay module, Black Lightning wrapper for cow which says things. """
+    """ For .cowsay module, MelloBot wrapper for cow which says things. """
     if not cowmsg.text[0].isalpha() and cowmsg.text[0] not in ("/", "#", "@", "!"):
         arg = cowmsg.pattern_match.group(1).lower()
         text = cowmsg.pattern_match.group(2)
@@ -1118,7 +1118,7 @@ async def source(e):
 
 @register(outgoing=True, pattern="^.react$")
 async def react_meme(react):
-    """ Make your Black Lightning react to everything. """
+    """ Make your MelloBot react to everything. """
     if not react.text[0].isalpha() and react.text[0] not in ("/", "#", "@", "!"):
         await react.edit(random.choice(FACEREACTS))
 
@@ -1547,7 +1547,7 @@ CMD_HELP.update(
 \n\n.owo\
 \nUsage: UwU\
 \n\n.react\
-\nUsage: Make your Black Lightning react to everything.\
+\nUsage: Make your MelloBot react to everything.\
 \n\n.slap\
 \nUsage: reply to slap them with random objects !!\
 \n\n.cry\

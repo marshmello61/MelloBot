@@ -63,7 +63,7 @@ async def startupmessage():
         if BOTLOG:
             Config.CATUBLOGO = await catub.tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://telegra.ph/file/4e3ba8e8f7e535d5a2abe.jpg",
+                "https://telegra.ph/file/931322c1de82358f4dacc.jpg",
                 caption="**Your MelloBot has been started successfully.**",
                 buttons=[(Button.url("Support", "https://t.me/mellolab"),)],
             )

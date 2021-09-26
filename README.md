@@ -39,7 +39,7 @@ A simple Telegram userbot based on Telethon .
 ```
               YOU ARE FOREWARNED
 Your Telegram account may get banned.   
-Catuserbot or we are not responsible for your account, 
+MelloBot or we are not responsible for your account, 
 This bot is intended for the purpose of having fun with some fun commands 
 and group management with some helpfull commands.
 
@@ -57,4 +57,4 @@ Thanks for using our bot 😺
 ## Credits
    - Special thanks to [LonamiWebs](https://github.com/LonamiWebs/Telethon/) for Telethon library.
    - To all devs of these [Userbots](https://github.com/marshmello61/MelloBot/tree/bugs#inspiration)
-   - Finally to all [contributors of Catuserbot](https://github.com/marshmello61/MelloBot/graphs/contributors)
+   - Finally to all [contributors of MelloBot](https://github.com/marshmello61/MelloBot/graphs/contributors)

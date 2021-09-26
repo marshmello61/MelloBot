@@ -44,7 +44,7 @@ async def amireallyalive(event):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     _, check_sgnirts = check_data_base_heal_th()
-    EMOJI = gvarstatus("ALIVE_EMOJI") or "  ✥ "
+    EMOJI = gvarstatus("ALIVE_EMOJI") or "🔺"
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**// Project MelloBot running fine af //**"
     CAT_IMG = gvarstatus("ALIVE_PIC")
     cat_caption = gvarstatus("ALIVE_TEMPLATE") or temp

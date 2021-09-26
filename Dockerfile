@@ -1,4 +1,4 @@
-FROM marshmello61/MelloBot:slim-buster
+FROM marshmello61/MelloBot
 
 #clonning repo 
 RUN git clone https://github.com/marshmello61/mellobot.git -b cat /root/userbot
